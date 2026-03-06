@@ -8,3 +8,5 @@ class Portal:
 
 kinopoisk = Portal("Kinopoisk", 'https://www.kinopoisk.ru/')# Допиши нужное значение)
 print(kinopoisk.url)
+print(kinopoisk.__dict__)
+kinopoisk.show_info()
