@@ -319,19 +319,462 @@
 # print(cat.make_sound())  # вывод: "Мяу" 98
 
 
-class Car:
-    def calculate_travel_time(self, distance):
-        return distance // 60
+# class Car:
+#     def calculate_travel_time(self, distance):
+#         return distance // 60
 
-class Bicycle:
-    def calculate_travel_time(self, distance):
-        return distance // 15
+# class Bicycle:
+#     def calculate_travel_time(self, distance):
+#         return distance // 15
 
 
-car = Car()
-bicycle = Bicycle()
+# car = Car()
+# bicycle = Bicycle()
 
-# вызови метод calculate_travel_time() для каждого экземпляра, 
-# передав в качестве параметра расстояние
-print(car.calculate_travel_time(120))
-print(bicycle.calculate_travel_time(45))
+# # вызови метод calculate_travel_time() для каждого экземпляра, 
+# # передав в качестве параметра расстояние
+# print(car.calculate_travel_time(120))
+# print(bicycle.calculate_travel_time(45))
+
+# class LandAnimal:
+#     def walk(self):
+#         print("Ходит")
+
+#     def run(self):
+#         print("Бегает")
+
+# class WaterAnimal:
+#     def swim(self):
+#         print("Плавает")
+
+# class Amphibian(LandAnimal, WaterAnimal):
+#     def run(self):
+#         print("Этот вид не бегает.")
+
+# frog = Amphibian()
+# frog.walk()  # Ходит
+# frog.swim()  # Плавает
+# frog.run()   # Этот вид не бегает.
+
+
+# class Animal:
+#     distance_travelled = 0
+#     calories_consumed = 0
+
+#     def move(self):
+#         self.distance_travelled += 5
+#         return self.distance_travelled
+
+#     def eat(self):
+#         self.calories_consumed += 10
+#         return self.calories_consumed
+
+
+# class Plant:
+#     height = 0
+#     energy_stored = 0
+
+#     def grow(self):
+#         self.height += 1
+#         return self.height
+
+#     def photosynthesize(self):
+#         self.energy_stored += 10
+#         return self.energy_stored
+
+
+# # добавь класс ZombieHerbivore, который наследуется от Animal и Plant
+# class ZombieHerbivore(Animal, Plant):
+#     pass
+
+# # вызов методов для объекта класса ZombieHerbivore
+# zombie = ZombieHerbivore()
+# print(zombie.move())
+# print(zombie.eat())
+# print(zombie.grow())
+
+
+
+
+
+# class LandAnimal:
+#     def __init__(self):
+#         self.can_walk = True
+
+#     def walk(self):
+#         if self.can_walk:
+#             print("Ходит")
+#         else:
+#             print("Не может ходить")
+
+# class WaterAnimal:
+#     def __init__(self):
+#         self.can_swim = True
+
+#     def swim(self):
+#         if self.can_swim:
+#             print("Плавает")
+#         else:
+#             print("Не может плавать")
+
+# class Amphibian(LandAnimal, WaterAnimal):
+#     def __init__(self):
+#         LandAnimal.__init__(self) # вызвали конструктор первого суперкласса
+#         WaterAnimal.__init__(self) # вызвали конструктор второго суперкласса
+
+# frog = Amphibian()
+# frog.walk()  # Ходит
+# frog.swim()  # Плавает
+
+
+# class Animal:
+#     def __init__(self):
+#         self.distance_travelled = 0
+#         self.calories_consumed = 0
+
+#     def move(self):
+#         self.distance_travelled += 5
+
+#     def eat(self):
+#         self.calories_consumed += 10
+
+
+# class Plant:
+#     def __init__(self):
+#         self.height = 0
+#         self.energy_stored = 0
+
+#     def grow(self):
+#         self.height += 1
+
+#     def photosynthesize(self):
+#         self.energy_stored += 10
+
+
+# class ZombieHerbivore(Animal, Plant):
+#     def __init__(self):
+#         Plant.__init__(self)
+#         Animal.__init__(self)
+
+
+# zombie = ZombieHerbivore()
+# zombie.grow()    # height теперь будет 1
+# zombie.move()    # AttributeError: 'ZombieHerbivore' object has no attribute 'distance_travelled'
+# print(zombie.height)  # 1
+# print(zombie.distance_travelled)  # 5
+
+
+
+
+
+# class Warrior:
+#     def __init__(self):
+#         self.strength = 10
+#         self.health = 100
+
+#     def attack(self):
+#         attack_power = self.strength * 5
+#         print(f"Атакуем с силой {attack_power}!")
+
+
+# class Mage:
+#     def __init__(self):
+#         self.magic = 10
+#         self.intelligence = 10
+
+#     def cast_spell(self):
+#         spell_power = self.magic * self.intelligence
+#         print(f"Применяем заклинание силой {spell_power}!")
+
+# # реализуй класс BattleMage с множественным наследованием
+# class BattleMage(Warrior, Mage):
+#     def __init__(self):
+#         Warrior.__init__(self)
+#         Mage.__init__(self)
+
+
+# battleMage = BattleMage()
+# battleMage.attack()
+# battleMage.cast_spell()
+
+
+# class Vehicle:
+#     def speed(self):
+#         return "Скорость транспортного средства не определена"
+
+# class Car(Vehicle):
+#     def speed(self):
+#         return "Скорость автомобиля 100 км/ч"
+
+# class Plane(Vehicle):
+#     def speed(self):
+#         return "Скорость самолета 900 км/ч"
+
+# class FlyingCar(Car, Plane):
+#     pass
+
+# flying_car = FlyingCar()
+# print(flying_car.speed())
+
+
+# class Animal:
+#     def sound(self):
+#         return "тихое молчание"
+
+
+# class Dog(Animal):
+#     def sound(self):
+#         return "Гав!"
+
+
+# class Cat(Animal):
+#     def sound(self):
+#         return "Мяу!"
+
+
+# class CatDog(Dog, Cat):
+#     def __init__(self):
+#         Dog.__init__(self)
+#         Cat.__init__(self)
+#     def sound(self):
+#         return Cat.sound(self) + ' ' + Dog.sound(self)
+
+
+
+# my_pet = CatDog()
+# print(my_pet.sound())
+# # TypeError: Cannot create a consistent method resolution
+# # order (MRO) for bases Animal, Dog, Cat
+
+
+# class SleepMixin:
+
+#     def start_sleeping(self):
+#         print("Засыпаю...")
+
+#     def stop_sleeping(self):
+#         print("Просыпаюсь!")
+
+# class EatMixin:
+#     def __init__(self):
+#         self.is_eating = False
+#         self.food = None
+
+#     def start_eating(self, food):
+#         self.is_eating = True
+#         self.food = food
+#         print(f"Начинаю есть {food}...")
+
+#     def stop_eating(self):
+#         self.is_eating = False
+#         print("Закончил есть!")
+
+# class Human(SleepMixin, EatMixin):
+#     def __init__(self):
+#         SleepMixin.__init__(self)
+#         EatMixin.__init__(self)
+
+#     def go_to_work(self):
+#         print("Иду на работу!")
+
+# bob = Human()
+# bob.start_sleeping()  # Засыпаю...
+# bob.stop_sleeping()   # Просыпаюсь!
+# bob.start_eating("яблоко")  # Начинаю есть яблоко...
+# print(bob.is_eating, bob.food)  # True, "яблоко"
+# bob.stop_eating()     # Закончил есть!
+# print(bob.is_eating)  # False
+# bob.go_to_work()      # Иду на работу! 
+
+
+# место для миксинов
+# class BatTransformableMixin():
+#     def transform_into_bat(self):
+#         return "Превращение в летучую мышь"
+
+# class WolfTransformableMixin():
+#     def transform_into_wolf(self):
+#         return "Превращение в волка"
+
+# class RunnableMixin():
+#     def run(self):
+#         return "Беги, Форрест, беги!"
+
+
+# # наследуется от RunnableMixin
+# class Human(RunnableMixin):
+#     pass
+
+
+# # наследуется от BatTransformableMixin и RunnableMixin
+# class Vampire(BatTransformableMixin, RunnableMixin):
+#     pass
+
+
+# # наследуется от WolfTransformableMixin
+# class Werewolf(WolfTransformableMixin):
+#     pass
+
+
+# human = Human()
+# vampire = Vampire()
+# werewolf = Werewolf()
+
+# print(human.run())                      
+# print(vampire.run())                    
+# print(vampire.transform_into_bat())     
+# print(werewolf.transform_into_wolf())
+
+
+
+# # для класса Species реализуй конструктор и метод grow()
+# class Species:
+#     def __init__(self, population, growth_rate):
+#         self.population = population
+#         self.growth_rate = growth_rate
+
+#     def grow(self):
+#         self.population += self.population * self.growth_rate
+#         return self.population
+        
+
+
+# species = Species(1000, 0.02)
+# print(species.population)
+# species.grow()
+# print(species.population)
+
+
+
+
+# class Species:
+#     def __init__(self, population, growth_rate):
+#         self.population = population
+#         self.growth_rate = growth_rate
+
+#     def grow(self):
+#         self.population += self.population * self.growth_rate
+
+
+# # наследуй класс Predator от Species, реализуй конструктор и метод survive()
+# class Predator(Species):
+#     def __init__(self, population, growth_rate, hunting_success_rate):
+#         super().__init__(population, growth_rate)
+#         self.hunting_success_rate = hunting_success_rate
+
+#     def survive(self):
+#         self.population -= self.population * (1 - self.hunting_success_rate)
+#         return self.population 
+
+
+# predator = Predator(1000, 0.02, 1.05)
+# print(predator.population)
+# predator.survive()
+# print(predator.population)
+
+
+
+
+
+
+# class Species:
+#     def __init__(self, population, growth_rate):
+#         self.population = population
+#         self.growth_rate = growth_rate
+
+#     def grow(self):
+#         self.population += self.population * self.growth_rate
+
+
+# # наследуй класс Herbivore от Species, реализуй конструктор и 
+# # переопредели метод grow()
+# class Herbivore(Species):
+#     def __init__(self, population, growth_rate, food_availability):
+#         super().__init__(population, growth_rate)
+#         self.food_availability = food_availability
+
+#     def grow(self):
+#         if self.food_availability > 0.2:
+#             self.population += self.population * self.growth_rate
+#             self.food_availability -= 0.15
+#         else:
+#             self.migrate()
+#         return self.population
+
+#     def migrate(self):
+#         self.population -= 0.2 * self.population
+#         self.food_availability = 0.3
+
+
+# herbivore = Herbivore(2000, 0.04, 0.3)
+# herbivore.grow()
+# print(herbivore.population)
+# print(herbivore.food_availability)
+# herbivore.grow()
+# print(herbivore.population)
+# print(herbivore.food_availability)
+
+
+
+
+class Species:
+    def __init__(self, population, growth_rate):
+        self.population = population
+        self.growth_rate = growth_rate
+
+    def grow(self):
+        self.population += self.population * self.growth_rate
+
+
+class Predator(Species):
+    def __init__(self, population, growth_rate, hunting_success_rate):
+				# явный вызов класса Species
+        Species.__init__(self, population, growth_rate)  
+        self.hunting_success_rate = hunting_success_rate
+
+    def survive(self):
+        self.population -= self.population * (1 - self.hunting_success_rate)
+
+
+class Herbivore(Species):
+    def __init__(self, population, growth_rate, food_availability):
+				# явный вызов класса Species
+        Species.__init__(self, population, growth_rate)
+        self.food_availability = food_availability
+
+    def grow(self):
+        if self.food_availability > 0.2:
+            self.population += self.growth_rate * self.population
+            self.food_availability -= 0.15
+        else:
+            self.migrate()
+
+    def migrate(self):
+        self.population -= 0.2 * self.population
+        self.food_availability = 0.3
+
+
+# наследуйся от классов Predator и Herbivore, реализуй конструктор и 
+# переопредели метод grow()
+class Omnivore(Predator, Herbivore):
+    def __init__(self, population, growth_rate, hunting_success_rate, food_availability, diet_balance):
+        Predator.__init__(self, population, growth_rate, hunting_success_rate)
+        Herbivore.__init__(self, population, growth_rate, food_availability)
+        self.diet_balance = diet_balance
+
+    def grow(self):
+        if self.diet_balance >= 0.5:
+            Predator.survive(self)
+        elif self.diet_balance < 0.5:
+            Herbivore.grow(self)
+        
+
+omnivore_herbivore = Omnivore(1000, 0.05, 1, 0.6, 0.4)
+print(omnivore_herbivore.population)
+omnivore_herbivore.grow()
+print(omnivore_herbivore.population)
+
+omnivore_predator = Omnivore(500, 0.02, 1.2, 0.5, 0.6)
+print(omnivore_predator.population)
+omnivore_predator.grow()
+print(omnivore_predator.population)
