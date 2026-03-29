@@ -1,3 +1,4 @@
+#!/usr/local/bin/python3
 # class Parent:
 #     def __init__(self):
 #         self._parent_attr = 10
@@ -161,29 +162,208 @@
 # student.add_grade(2)
 # print(student.get_grades())
 
-import sys
+# import sys
 
-class Employee:
-    def __init__(self, name, salary):
-        self.name = name
-        self.__salary = salary
+# class Employee:
+#     def __init__(self, name, salary):
+#         self.name = name
+#         self.__salary = salary
 
-    # напиши здесь геттер для __salary
-    def get_salary(self):
-        return self.__salary
+#     # напиши здесь геттер для __salary
+#     def get_salary(self):
+#         return self.__salary
 
-    # напиши здесь сеттер для __salary
-    def set_salary(self, salary):
-        print(id(self))  # выводим id объекта, для которого вызывается метод
-        if salary < 0:
-            print("Зарплата не может быть отрицательной")
-        else:
-            self.__salary = salary
+#     # напиши здесь сеттер для __salary
+#     def set_salary(self, salary):
+#         print(id(self))  # выводим id объекта, для которого вызывается метод
+#         if salary < 0:
+#             print("Зарплата не может быть отрицательной")
+#         else:
+#             self.__salary = salary
 
-employee = Employee('Кот', 10)
-print(id(employee))  # выводим id объекта employee
+# employee = Employee('Кот', 10)
+# print(id(employee))  # выводим id объекта employee
 
-print(employee.get_salary())  # Вывод: 10 рыбов
-employee.set_salary(20)
-print(employee.get_salary())  # Вывод: 20 рыбов
+# print(employee.get_salary())  # Вывод: 10 рыбов
+# employee.set_salary(20)
+# print(employee.get_salary())  # Вывод: 20 рыбов
             
+
+# class RobotVacuum:
+#     def __init__(self, state):
+#         self.__state = state    # атрибут стал свойством
+
+#     @property                   # теперь это — геттер свойства
+#     def state(self):   
+#         return self.__state     
+
+# robot = RobotVacuum("В ожидании")
+
+# print(robot.state)
+
+
+
+# class Circle:
+#     def __init__(self, radius):
+#         self.__radius = radius
+
+#     # создай геттер для свойства radius
+#     @property
+#     def radius(self):
+#         return self.__radius
+
+# circle = Circle(5)
+# print(circle.radius)  # вызови геттер у объекта circle для свойства radius
+
+
+
+# @state.setter # сеттер для свойства state
+# def state(self, state):
+#     if state in ["работает", "заряжается", "в ожидании"]:
+#         self.__state = state
+#     else:
+#         print(f"Недопустимое состояние: {state}. Состояние может быть 'работает', 'заряжается' или 'в ожидании'") 
+
+
+
+
+# class RobotVacuum:
+#     def __init__(self, state):
+#         self.__state = state
+
+#     @property                   # геттер для свойства state
+#     def state(self):
+#         return self.__state
+
+#     @state.setter              # сеттер для свойства state
+#     def state(self, state):
+#         if state in ["работает", "заряжается", "в ожидании"]:
+#             self.__state = state
+#         else:
+#             print(f"Недопустимое состояние: {state}. Состояние может быть 'работает', 'заряжается' или 'в ожидании'")
+
+# # создали объект
+# robo_vacuum = RobotVacuum("в ожидании")
+
+# # обратились к свойству, чтобы получить состояния
+# print(robo_vacuum.state)  # Вывод: в ожидании
+
+# # перезаписали свойство, чтобы установить состояние
+# robo_vacuum.state = "работает"
+# print(robo_vacuum.state)  # Вывод: работает
+
+# # попытались использовать свойство, чтобы установить недопустимое состояние
+# robo_vacuum.state = "летает"  # Вывод: Недопустимое состояние: летает. Состояние может быть 'работает', 'заряжается' или 'в ожидании'
+# print(robo_vacuum.state)   # Вывод: работает 
+
+
+# class EBook:
+#     def __init__(self, content):
+#         self.__content = content
+#         self.__current_page = 0
+
+#     @property
+#     def content(self):
+#         return self.__content
+    
+#     @content.setter
+#     def content(self, new_content):
+
+#         self.__content = new_content
+
+#     @property
+#     def current_page(self):
+#         return self.__current_page
+
+#     @current_page.setter
+#     def current_page(self, current_page):
+#         print(f"self.__content = {len(self.__content)}")
+#         if current_page < 0:
+#             self.__current_page = 0
+#         elif current_page >= len(self.__content):
+#             self.__current_page = len(self.__content) - 1
+#         else:
+#             self.__current_page = current_page
+#         return self.__current_page
+
+# book_1 = EBook(["Страница_1", "Страница_2", "Страница_3"])
+
+# book_1.content = ["Страница_4", "Страница_5", "Страница_6"]
+
+# print(book_1.content)
+
+# print(book_1.current_page)
+
+# book_1.current_page = 5
+
+# print(book_1.current_page)
+
+# book_1.current_page = 1
+
+# print(book_1.current_page)
+
+# class Product:
+#     def __init__(self, name, quantity, price):
+#         self.__name = name
+#         self.__quantity = quantity
+#         self.__price = price
+#     @property
+#     def name(self):
+#         return self.__name
+#     @property
+#     def quantity(self):
+#         return self.__quantity
+#     @property
+#     def price(self):
+#         return self.__price
+
+# kefir = Product("Кефир", 12, 100)
+
+# print(kefir.price)
+
+
+class Product:
+    def __init__(self, name, quantity, price):
+        self.__name = name
+        self.__quantity = quantity
+        self.__price = price
+
+    @property
+    def name(self):
+        return self.__name
+
+    # напиши сеттер для свойства name
+    @name.setter
+    def name(self, new_name):
+        self.__name=new_name
+
+    @property
+    def quantity(self):
+        return self.__quantity
+
+    # напиши сеттер для свойства quantity
+    @quantity.setter
+    def quantity(self, new_quantity):
+        self.__quantity = new_quantity
+
+    @property
+    def price(self):
+        return self.__price
+
+    # напиши сеттер для свойства price
+    @price.setter
+    def price(self, new_price):
+        if new_price < 0:
+            print("Цена не может быть отрицательной")
+        else:
+            self.__price = new_price
+
+
+# тут программа создаст объект, вызовет сеттеры и выведет результат
+product = Product("Яблоки", 0.6, 120)
+product.name = "Апельсины"
+product.quantity = 1.2
+product.price = 240
+print(product.name)
+print(product.quantity)
+print(product.price)
